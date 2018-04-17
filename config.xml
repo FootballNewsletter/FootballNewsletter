@@ -12,5 +12,15 @@
 	
 	<plugin name="cordova-plugin-device" spec="2.0.1" />
 	<plugin name="cordova-plugin-dialogs" spec="2.0.1" />
+	<plugin name="cordova-universal-links-plugin" spec="2.0.1" />
+	<plugin name="cordova-plugin-browsertab" spec="2.0.1" />
+	<plugin name="cordova-plugin-inappbrowser" spec="2.0.1" />
+
+	<universal-links>
+		<host name="https://qp54z.app.goo.gl" scheme="https" />
+		<host name="footballnewsletter-c366f.firebaseapp.com" scheme="https">
+			<path url="/__/auth/callback"/>
+		</host>
+	</universal-links>
 
 </widget>
