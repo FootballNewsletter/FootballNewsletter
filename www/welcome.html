@@ -8,9 +8,11 @@
     <script src="cordova.js"></script>
 </head>
 <body>
+<p id="message"></p>
 <script>
+    console.log(typeof localStorage.getItem("UID"));
     document.getElementById("message").innerHTML = localStorage.getItem("UID");
 </script>
-<p id="message"></p>
+
 </body>
 </html>
