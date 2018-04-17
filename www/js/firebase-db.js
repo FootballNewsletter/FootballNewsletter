@@ -1,6 +1,6 @@
 var loginUser;
 
-
+//
 
 //logowanie email tymczasowow bez parametrow z formularza
 function loginEmail() {
@@ -77,8 +77,8 @@ function login(user) {
     console.log("login");
     if(user) {
         loginUser = user;
-        localStorage.setItem("UID", loginUser.uid);
-        document.getElementById("message").innerHTML = localStorage.getItem("UID");
+        localStorage.UID = loginUser.uid;
+        //document.getElementById("message").innerHTML = localStorage.UID;
         window.location.href = 'welcome.html';
     }
 }
