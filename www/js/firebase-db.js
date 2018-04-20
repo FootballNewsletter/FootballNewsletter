@@ -4,9 +4,8 @@ var loginUser;
 
 //logowanie email tymczasowow bez parametrow z formularza
 function loginEmail() {
-    console.log("loginEmail");
-    var email = document.getElementById("email").value;
-    var passwd = document.getElementById("passwd").value;
+    var email = document.getElementById("emailLogin").value;
+    var passwd = document.getElementById("passwdLogin").value;
 
     user = firebase.auth().signInWithEmailAndPassword(email, passwd).catch(function(error) {
         //wyswietlenie bledu nad formularzem logowania
@@ -16,13 +15,16 @@ function loginEmail() {
         //testowo
         var errorCode = error.code;
         var errorMessage = error.message;
-        document.getElementById("message").innerHTML = errorCode + " " + errorMessage;
+        document.getElementById("message").innerHTML = errorMessage;
+        console.log(errorCode);
+        console.log(errorMessage);
     });
 
     user.then(function(user) {
         if (typeof user.uid === "undefined") {
             console.log("logowanie niepoprawne")
         } else {
+            console.log("ok");
             login(user);
         }
     });
@@ -30,10 +32,8 @@ function loginEmail() {
 
 //rejesrtacja email/passwd
 function registerEmail() {
-
-    console.log("loginEmail");
-    var email = document.getElementById("email").value;
-    var passwd = document.getElementById("passwd").value;
+    var email = document.getElementById("emailRegister").value;
+    var passwd = document.getElementById("passwdRegister").value;
 
     user = firebase.auth().createUserWithEmailAndPassword(email, passwd).catch(function(error) {
         //wyswietlenie bledu nad formularzem logowania
@@ -43,7 +43,7 @@ function registerEmail() {
         //testowo
         var errorCode = error.code;
         var errorMessage = error.message;
-        document.getElementById("message").innerHTML = errorCode + " " + errorMessage;
+        document.getElementById("message").innerHTML = errorMessage;
     });
 
     user.then(function(user) {
@@ -78,8 +78,8 @@ function login(user) {
     if(user) {
         loginUser = user;
         localStorage.UID = loginUser.uid;
-        //document.getElementById("message").innerHTML = localStorage.UID;
-        window.location.href = 'welcome.html';
+        //document.getElementById("message").innerHTML = localStorage.getItem("UID");
+        window.location.href = '../welcome.html';
     }
 }
 

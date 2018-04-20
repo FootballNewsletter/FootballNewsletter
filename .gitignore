@@ -1,3 +1,4 @@
 .idea/
 platforms/
 plugins/
+www/js/firebase-init.js

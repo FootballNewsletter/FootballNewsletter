@@ -6,9 +6,11 @@
     <link href="../css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
     <script src="../js/bootstrap.js"></script>
     <script src="../js/jquery-3.3.1.min.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="../js/firebase-init.js"></script>
     <link href="../css/login.css" rel="stylesheet" id="my-css">
     <script src="../js/login.js"></script>
+    <script src="../js/firebase-db.js"></script>
 </head>
 <body>
 
@@ -34,12 +36,12 @@
                         <div class="col-lg-12">
                             <form id="login-form" action="#" method="post" role="form" style="display: block;">
                                 <div class="form-group">
-                                    <label for="username">Username</label>
-                                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    <label for="emailLogin">E-mail</label>
+                                    <input type="text" name="username" id="emailLogin" tabindex="1" class="form-control" placeholder="Username" value="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                    <label for="passwdLogin">Password</label>
+                                    <input type="password" name="password" id="passwdLogin" tabindex="2" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="form-group text-center">
                                     <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
@@ -48,31 +50,31 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
-                                            <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+                                            <input name="login-submit" id="login-submit-firebase" tabindex="4" class="form-control btn btn-login" value="Log In" onclick="loginEmail()">
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
-                                            <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-facebook" value="Log In with Facebook">
+                                            <input name="login-submit" id="login-submit-fb" tabindex="4" class="form-control btn btn-facebook" value="Log In with Facebook">
                                         </div>
                                     </div>
 
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
-                                            <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-google" value="Log In with Google">
+                                            <input name="login-submit" id="login-submit-google" tabindex="4" class="form-control btn btn-google" value="Log In with Google">
                                         </div>
                                     </div>
                                 </div>
                             </form>
                             <form id="register-form" action="#" method="post" role="form" style="display: none;">
                                 <div class="form-group">
-                                    <label for="username">Username</label>
-                                    <input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                    <label for="emailRegister">E-mail</label>
+                                    <input type="text" name="username" id="emailRegister" tabindex="1" class="form-control" placeholder="Username" value="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                    <label for="passwdRegister">Password</label>
+                                    <input type="password" name="password" id="passwdRegister" tabindex="2" class="form-control" placeholder="Password">
                                 </div>
                                 <div class="form-group">
                                     <label for="confirm-password">Confirm password</label>
@@ -81,11 +83,12 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-6 col-sm-offset-3">
-                                            <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
+                                            <input name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now" onclick="registerEmail()">
                                         </div>
                                     </div>
                                 </div>
                             </form>
+                            <div id="message"></div>
                         </div>
                     </div>
                 </div>
