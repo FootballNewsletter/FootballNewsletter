@@ -76,10 +76,23 @@ function loginGoogle() {
 function login(user) {
     console.log("login");
     if(user) {
-        loginUser = user;
-        localStorage.UID = loginUser.uid;
-        //document.getElementById("message").innerHTML = localStorage.getItem("UID");
-        window.location.href = '../welcome.html';
+        return firebase.database().ref('/users/' + user.uid).once('value').then(function(snapshot) {
+            var username = (snapshot.val() && snapshot.val().name) || -1;
+
+            console.log(snapshot.val().clubs);
+
+            if(username === -1) {
+                localStorage.UID = "nowy" + user.uid;
+                window.location.href = 'welcome.html';
+            } else {
+                loginUser = user;
+                localStorage.UID = loginUser.uid;
+                //document.getElementById("message").innerHTML = localStorage.getItem("UID");
+                //window.location.href = 'welcome.html';
+            }
+
+        });
+
     }
 }
 
