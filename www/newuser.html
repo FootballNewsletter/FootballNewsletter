@@ -10,12 +10,10 @@
 <body>
 <p id="message"></p>
 <script>
-    console.log(localStorage.getItem("UID"));
-    console.log(localStorage.getItem("name"));
-    //console.log(localStorage.getItem("clubs"));
+    var uid = localStorage.getItem("UID");
+    var name = localStorage.getItem("name");
 
-    console.log(localStorage.getItem("UID"));
-    //document.getElementById("message").innerHTML = localStorage.getItem("UID");
+    createUser(uid, name);
 </script>
 
 </body>

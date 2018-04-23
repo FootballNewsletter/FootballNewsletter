@@ -32,8 +32,8 @@ function loginEmail() {
 
 //rejesrtacja email/passwd
 function registerEmail() {
-    var email = document.getElementById("emailRegister").value;
-    var passwd = document.getElementById("passwdRegister").value;
+    var email = document.getElementById("email").value;
+    var passwd = document.getElementById("passwd").value;
 
     user = firebase.auth().createUserWithEmailAndPassword(email, passwd).catch(function(error) {
         //wyswietlenie bledu nad formularzem logowania
@@ -50,7 +50,7 @@ function registerEmail() {
         if (typeof user === "undefined") {
             console.log("logowanie niepoprawne")
         } else {
-            login(user);
+            document.getElementById("message").innerHTML ='Użytkownik został zarejesrtowany';
         }
     });
 
@@ -77,18 +77,18 @@ function login(user) {
     console.log("login");
     if(user) {
         return firebase.database().ref('/users/' + user.uid).once('value').then(function(snapshot) {
-            var username = (snapshot.val() && snapshot.val().name) || -1;
+            var username = (snapshot.val() && snapshot.val().email) || -1;
 
-            console.log(snapshot.val().clubs);
+
+            localStorage.UID = user.uid;
+            localStorage.name = user.displayName || user.email;
+            //console.log(user);
 
             if(username === -1) {
-                localStorage.UID = "nowy" + user.uid;
-                window.location.href = 'welcome.html';
+                window.location.href = 'newuser.html';
             } else {
-                loginUser = user;
-                localStorage.UID = loginUser.uid;
-                //document.getElementById("message").innerHTML = localStorage.getItem("UID");
-                //window.location.href = 'welcome.html';
+                localStorage.clubs = snapshot.val().clubs;
+                window.location.href = 'welcome.html';
             }
 
         });
@@ -105,4 +105,20 @@ function logout() {
     }).catch(function(error) {
         console.log(error);
     });
+}
+
+function createUser(uid, name) {
+
+    var userInfo = {
+       name: name
+    };
+
+    // Get a key for a new Post.
+    firebase.database().ref().child('users/'+uid).set(userInfo);
+
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    //var updates = {};
+    //updates['/users/' + user.uid] = userInfo;
+
+    //return firebase.database().ref().update(updates);
 }
