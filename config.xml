@@ -9,8 +9,9 @@
 		Jarosław Stropa, Szymon Serwin, Łukasz Papież, Damian Zając
 	</author>
 	<platform name="android" />
-	
-	<plugin name="cordova-plugin-device" spec="2.0.1" />
+
+	<plugin name="cordova-plugin-firebase" spec="1.0.0" />
+	<plugin name="cordova-plugin-device" spec="^1.1.4" />
 	<plugin name="cordova-plugin-dialogs" spec="2.0.1" />
 	<plugin name="cordova-universal-links-plugin" spec="^1.2.1" />
 	<plugin name="cordova-plugin-browsertab" spec="0.2.0" />

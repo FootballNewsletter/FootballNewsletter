@@ -58,6 +58,7 @@ function registerEmail() {
 
 //funkcja po onclick logowanie google
 function loginGoogle() {
+    console.log('google');
     firebase.auth().onAuthStateChanged( function(user){
         if(user) {
             //poprawne logowanie
