@@ -1,0 +1,46 @@
+.thumbnail:hover {
+    background-color: #f1eded  ;
+}
+.thumbnail{
+    margin-bottom: 10px;
+}
+.thumbnail>img {
+    height: auto;
+}
+.date-of-post{
+    color: #0089d8;
+}
+.news-blog .page-header{
+    margin-bottom: 13px;
+    padding: 17px 14px 19px 30px;
+    margin-top: 12px;
+}
+.caption h2, h3 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+.caption p{
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    margin: 0 0 10px;
+    line-height: 1.42857143;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.fullscreen_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('http://wallpapervip.com/download/football_13-wallpaper.jpg');
+    background-repeat:repeat;
+}
