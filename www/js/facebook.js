@@ -2,7 +2,7 @@ function buildHtmlTable() {
  
  function getValue(){ //pobieranie wartości z json
    var value= $.ajax({ 
-      url: 'https://raw.githubusercontent.com/blyskacz/JSONData/master/Real.json', //narazie adres na sztywno
+      url: 'https://raw.githubusercontent.com/FootballNewsletter/JSONData/master/facebook.json', //narazie adres na sztywno
       async: false
    }).responseText;
    return value;
