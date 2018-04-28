@@ -16,6 +16,10 @@
 	<plugin name="cordova-universal-links-plugin" spec="^1.2.1" />
 	<plugin name="cordova-plugin-browsertab" spec="0.2.0" />
 	<plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+	<plugin name="cordova-plugin-whitelist" source="npm" />
+	<access origin="*" />
+	<allow-navigation href="*" />
+	<allow-intent href="*" />
 
 	<universal-links>
 		<host name="https://qp54z.app.goo.gl" scheme="https" />
@@ -23,5 +27,7 @@
 			<path url="/__/auth/callback"/>
 		</host>
 	</universal-links>
+
+
 
 </widget>
