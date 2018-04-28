@@ -78,12 +78,13 @@ function login(user) {
     console.log("login");
     if(user) {
         return firebase.database().ref('/users/' + user.uid).once('value').then(function(snapshot) {
-            var username = (snapshot.val() && snapshot.val().email) || -1;
+            var username = (snapshot.val() && snapshot.val().name) || -1;
 
 
             localStorage.UID = user.uid;
             localStorage.name = user.displayName || user.email;
-            //console.log(user);
+
+            console.log(user);
 
             if(username === -1) {
                 window.location.href = 'newuser.html';
@@ -122,4 +123,25 @@ function createUser(uid, name) {
     //updates['/users/' + user.uid] = userInfo;
 
     //return firebase.database().ref().update(updates);
+}
+
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function getCurio() {
+    console.log("curio");
+
+    var lc_clubs = localStorage.getItem("clubs");
+    var clubs = lc_clubs.split(",");
+    var clubIndex = getRandomInt(0,clubs.length-1);
+    var clubUID = clubs[clubIndex];
+
+    firebase.database().ref('/clubs/' + clubUID +'/curiosity').once('value').then(function(snapshot) {
+        var curios = snapshot.val();
+        var curioIndex = getRandomInt(0,curios.length-1);
+        document.getElementById("curio").innerHTML = curios[curioIndex];
+    });
+
+
 }
