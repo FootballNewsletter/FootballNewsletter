@@ -112,17 +112,11 @@ function logout() {
 function createUser(uid, name) {
 
     var userInfo = {
-       name: name
+        name: name,
+        clubs: 'empty'
     };
 
-    // Get a key for a new Post.
     firebase.database().ref().child('users/'+uid).set(userInfo);
-
-    // Write the new post's data simultaneously in the posts list and the user's post list.
-    //var updates = {};
-    //updates['/users/' + user.uid] = userInfo;
-
-    //return firebase.database().ref().update(updates);
 }
 
 function getRandomInt(min, max) {
@@ -143,5 +137,11 @@ function getCurio() {
         document.getElementById("curio").innerHTML = curios[curioIndex];
     });
 
+}
 
+function setPref(arr) {
+    var updates = {};
+    updates['/users/' + localStorage.getItem("UID") + '/clubs'] = arr;
+
+    firebase.database().ref().update(updates);
 }
