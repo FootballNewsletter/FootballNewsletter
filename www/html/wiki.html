@@ -6,19 +6,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
           integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#txtSearchText').keypress(function (e) {
-                if (e.keyCode == 13)
-                    $('#btnSearch').click();
-            });
-        });
-
         function WikipediaAPISearch() {
-            var txt = $("#txtSearchText").val();
 
             $.ajax({
                 type: "GET",
-                url: "http://pl.wikipedia.org/w/api.php?action=opensearch&search=" + txt + "&callback=?",
+                url: "http://pl.wikipedia.org/w/api.php?action=opensearch&search=Real_Madryt&callback=?",
                 contentType: "application/json; charset=utf-8",
                 async: false,
                 dataType: "json",
@@ -39,7 +31,7 @@
         function WikipediaAPIGetContent(search) {
             $.ajax({
                 type: "GET",
-                url: "http://pl.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + search + "&callback=?",
+                url: "http://pl.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Real_Madryt&callback=?",
                 contentType: "application/json; charset=utf-8",
                 async: false,
                 dataType: "json",
@@ -60,6 +52,103 @@
                 }
             });
         }
+		
+		
+		function WikipediaAPISearch2() {
+
+            $.ajax({
+                type: "GET",
+                url: "http://pl.wikipedia.org/w/api.php?action=opensearch&search=AS_Roma&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
+                    $.each(data, function (i, item) {
+                        if (i == 1) {
+                            var searchData = item[0];
+                            WikipediaAPIGetContent2(searchData);
+                        }
+                    });
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage);
+                }
+            });
+        }
+
+        function WikipediaAPIGetContent2(search) {
+            $.ajax({
+                type: "GET",
+                url: "http://pl.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=AS_Roma&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
+
+                    var markup = data.parse.text["*"];
+                    var blurb = $('<div></div>').html(markup);
+                    
+
+                    // remove cite error
+                    blurb.find('.mw-ext-cite-error').remove();
+                    $('#results2').html($(blurb).find('p'));
+                    $('#results2').html(blurb);
+
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage);
+                }
+            });
+        }
+		
+		
+		
+		function WikipediaAPISearch3() {
+
+            $.ajax({
+                type: "GET",
+                url: "http://pl.wikipedia.org/w/api.php?action=opensearch&search=Arsenal_F.C.&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
+                    $.each(data, function (i, item) {
+                        if (i == 1) {
+                            var searchData = item[0];
+                            WikipediaAPIGetContent3(searchData);
+                        }
+                    });
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage);
+                }
+            });
+        }
+
+        function WikipediaAPIGetContent3(search) {
+            $.ajax({
+                type: "GET",
+                url: "http://pl.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Arsenal_F.C.&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
+
+                    var markup = data.parse.text["*"];
+                    var blurb = $('<div></div>').html(markup);
+                    
+
+                    // remove cite error
+                    blurb.find('.mw-ext-cite-error').remove();
+                    $('#results3').html($(blurb).find('p'));
+                    $('#results3').html(blurb);
+
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage);
+                }
+            });
+        }
     </script>
    <style type="text/css">
    .references{
@@ -73,21 +162,28 @@ display:none;
 <body>
 
     <div class="container">
-        <h2>Wikipedia api get page content</h2>
         <table class="table">
             <tr>
                 <th>
-                    <input id="txtSearchText" type="text" value="wpisz" />
-                    &nbsp; <input id="btnSearch" type="button" value="Search" onclick="WikipediaAPISearch();" />
-                </th>
-            </tr>
-            <tr>
-                <th>
                     <div id="results" style="font-family:Verdana; font-size:10px; font-style:normal;">
-
+					
                     </div>
                 </th>
-
+				<th>
+					<div id="results2" style="font-family:Verdana; font-size:10px; font-style:normal;">
+					
+                    </div>
+                </th>
+				<th>
+					<div id="results3" style="font-family:Verdana; font-size:10px; font-style:normal;">
+					
+                    </div>
+                </th>
+<script>
+document.getElementById("results3").innerHTML = WikipediaAPISearch3(); 
+document.getElementById("results2").innerHTML = WikipediaAPISearch2();
+document.getElementById("results").innerHTML = WikipediaAPISearch();
+</script>
             </tr>
         </table>
     </div>
