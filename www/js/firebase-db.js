@@ -145,3 +145,26 @@ function setPref(arr) {
 
     firebase.database().ref().update(updates);
 }
+
+function getClubs() {
+    console.log("clubs");
+
+    firebase.database().ref('/clubs').once('value').then(function(snapshot) {
+        var clubs = snapshot.val();
+
+        for(var i in clubs){
+            var key = i;
+            var name = clubs[i].name;
+
+            //TO DO: sposob na wyswietlenie tego na stonie:
+            // key - unilakny klucz do zapisu w bazie
+            // name - nazwa klubu tylko do wyswietlenia na froncie
+            console.log(key);
+            console.log(name);
+        }
+
+
+
+    });
+
+}
