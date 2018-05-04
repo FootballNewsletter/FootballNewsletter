@@ -8,28 +8,11 @@
     <script src="cordova.js"></script>
 </head>
 <body>
-<p id="message"></p>
-<script>
-    //console.log(localStorage.getItem("UID"));
-    //console.log(localStorage.getItem("name"));
-    //console.log(localStorage.getItem("clubs"));
-    //console.log(localStorage.getItem("UID"));
-    //document.getElementById("message").innerHTML = localStorage.getItem("UID");
-    //getCurio();
-    //getClubs();
-    //setClubsToStorage();
-
-    //var tmp = localStorage.clubs.split(',');
-
-    //for(var k in tmp){
-        //console.log(tmp[k]);
-        //console.log(JSON.parse(localStorage.getItem(tmp[k])));
-    //}
-
-   //console.log(-Math.floor(Math.random() * (0 - 5)));
-
-</script>
 <a href="../welcomeJarka.html">Welcome Jarka</a>
 <p id="curio"></p>
+<script>
+    var uid = localStorage.getItem("UID");
+    document.getElementById("curio").innerHTML = uid;
+</script>
 </body>
 </html>

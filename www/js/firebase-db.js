@@ -22,7 +22,8 @@ function loginEmail() {
 
     user.then(function(user) {
         if (typeof user.uid === "undefined") {
-            console.log("logowanie niepoprawne")
+            document.getElementById("message").innerHTML = "logowanie niepoprawne";
+            console.log("logowanie niepoprawne");
         } else {
             console.log("ok");
             login(user);
