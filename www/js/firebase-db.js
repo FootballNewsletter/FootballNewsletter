@@ -80,7 +80,6 @@ function login(user) {
         return firebase.database().ref('/users/' + user.uid).once('value').then(function(snapshot) {
             var username = (snapshot.val() && snapshot.val().name) || -1;
 
-
             localStorage.UID = user.uid;
             localStorage.name = user.displayName || user.email;
 
@@ -90,6 +89,7 @@ function login(user) {
                 window.location.href = 'newuser.html';
             } else {
                 localStorage.clubs = snapshot.val().clubs;
+                setClubsToStorage();
                 window.location.href = 'welcome.html';
             }
 
@@ -101,6 +101,7 @@ function login(user) {
 function logout() {
     console.log("logout");
     firebase.auth().signOut().then(function() {
+        //TO DO:
         //przekierowanie do panelu logowania
         loginUser = null;
         document.getElementById("message").innerHTML = "Wylogowano";
@@ -163,7 +164,28 @@ function getClubs() {
             console.log(name);
         }
 
+    });
+}
 
+function setClubsToStorage() {
+    var clubs = localStorage.clubs.split(',');
+
+    firebase.database().ref('/clubs').once('value').then(function(snapshot) {
+        var info = snapshot.val();
+
+        for(var i in clubs) {
+            var clubInfo = {
+                name: info[clubs[i]].name,
+                calendar: info[clubs[i]].calendar,
+                table: info[clubs[i]].table,
+                team: info[clubs[i]].team,
+            };
+            //console.log(clubs[i]);
+            //console.log(clubInfo);
+            //console.log(JSON.stringify(clubInfo));
+
+            localStorage.setItem(clubs[i], JSON.stringify(clubInfo));
+        }
 
     });
 
