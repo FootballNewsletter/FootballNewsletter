@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<link href="bootstrap4/css/bootstrap.css" rel="stylesheet" id="bootstrap-css1">
+<link href="bootstrap4/css/bootstrap-grid.css" rel="stylesheet" id="bootstrap-css2">
+<link href="bootstrap4/css/bootstrap-reboot.css" rel="stylesheet" id="bootstrap-css3">
+<link href="css/results.css" rel="stylesheet" id="results-css">
+<script src="bootstrap4/js/bootstrap.js"></script>
+<script src="bootstrap4/js/bootstrap.bundle.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/results.js"></script>
+
+
+
+<!-- Bootstrap Core CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom Fonts -->
+<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="css/simple-line-icons.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+<link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+<link href="css/posts.css" rel="stylesheet" id="posts-css">
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/posts.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+        <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a class="js-scroll-trigger" href="preferences.html">Preferencje</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="welcomeJarka.html#">News</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="results.html">Tabele</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="schedule.html">Terminarze</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="team.html">Składy</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="#contact">Ciekawostki</a>
+            </li>
+        </ul>
+    </nav>
+
+        <table class="table table-striped">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Klub</th>
+                <th scope="col">RM</th>
+                <th scope="col">W</th>
+                <th scope="col">R</th>
+                <th scope="col">P</th>
+                <th scope="col">BZ</th>
+                <th scope="col">BS</th>
+                <th scope="col">RB</th>
+                <th scope="col">Pkt</th>
+            </tr>
+            </thead>
+            <tbody id="results">
+            <script>loadResultsRealMadryt()</script>
+            </tbody>
+        </table>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/stylish-portfolio.min.js"></script>
+</body>
+</html>

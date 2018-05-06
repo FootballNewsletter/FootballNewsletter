@@ -1,7 +1,13 @@
+function urlify(text) {
+    var urlRegex = /(https?:\/\/[^\s]+)/g;
+    return text.replace(urlRegex, function(url) {
+        return '<a href="' + url + '">' + url + '</a>';
+    })
+}
+
+
 function loadNews() {
-    console.log("elo");
-    $.getJSON('../json/newsFacebook.json', function(json) {
-        console.log(json);
+    $.getJSON('https://raw.githubusercontent.com/FootballNewsletter/JSONData/master/socialmedianews.json', function(json) {
         for (var i in json)
         {
             $("#posts").append("<div class=\"thumbnail principal-post\">\n" +
@@ -9,7 +15,9 @@ function loadNews() {
                 "                        <div class=\"caption\">\n" +
                 "                            <h2>"+json[i].team+"</h2>\n" +
                 "                            <span class=\"date-of-post\">"+json[i].date+"</span>\n" +
-                "                            <p>"+json[i].content+"</div>\n" +
+                "                            <p>"+urlify(json[i].content)+"" +
+                "                            <p>Źródło : "+json[i].source+"" +
+                "</div>\n" +
                 "                    </div>");
         }
     });

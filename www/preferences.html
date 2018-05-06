@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+    <link href="css/pref.css" rel="stylesheet" id="pref-css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/preferences.js"></script>
+</head>
+<body>
+<!-- Navigation -->
+<a class="menu-toggle rounded" href="#">
+    <i class="fa fa-bars"></i>
+</a>
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a class="js-scroll-trigger" href="#page-top">Preferencje</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#posts">News</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="results.html">Tabele</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="schedule.html">Terminarze</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="team.html">Składy</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#contact">Ciekawostki</a>
+        </li>
+    </ul>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">Preferencje</div>
+
+                <!-- List group -->
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        Real Madryt
+                        <div class="material-switch pull-right">
+                            <input id="checkboxReal" name="someSwitchOption001" type="checkbox"/>
+                            <label for="checkboxReal" class="label-primary"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        AS Roma
+                        <div class="material-switch pull-right">
+                            <input id="checkboxRoma" name="someSwitchOption001" type="checkbox"/>
+                            <label for="checkboxRoma" class="label-warning"></label>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        Arsenal F.C.
+                        <div class="material-switch pull-right">
+                            <input id="checkboxArsenal" name="someSwitchOption001" type="checkbox"/>
+                            <label for="checkboxArsenal" class="label-danger"></label>
+                        </div>
+                    </li>
+                </ul>
+                <div class="col-md-4 text-center">
+                <a class="btn btn-primary btn-xl js-scroll-trigger" onclick="savePreferences()">Zapisz</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/stylish-portfolio.min.js"></script>
+</body>
+</html>
