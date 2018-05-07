@@ -25,6 +25,10 @@
     <script src="js/bootstrap.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/posts.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+      <script src="js/firebase-init.js"></script>
+      <script src="js/firebase-db.js"></script>
+      <script src="cordova.js"></script>
 
   </head>
   <audio autoplay="autoplay">
@@ -55,6 +59,9 @@
         <li class="sidebar-nav-item">
           <a class="js-scroll-trigger" href="#contact">Ciekawostki</a>
         </li>
+          <li class="sidebar-nav-item">
+              <a class="js-scroll-trigger" href="#contact" onclick="logout()">Wyloguj</a>
+          </li>
       </ul>
     </nav>
 
@@ -95,6 +102,8 @@
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
     <script>
+        //TODO
+        //przyklad odczytu localstorage
         var uid = localStorage.getItem("UID");
         var name = localStorage.getItem("name");
         var clubs = localStorage.getItem("clubs");

@@ -102,10 +102,12 @@ function login(user) {
 function logout() {
     console.log("logout");
     firebase.auth().signOut().then(function() {
-        //TO DO:
-        //przekierowanie do panelu logowania
         loginUser = null;
-        document.getElementById("message").innerHTML = "Wylogowano";
+        localStorage.setItem("UID",null);
+        localStorage.setItem("name",null);
+        localStorage.setItem("clubs",null);
+
+        window.location.href = 'login.html';
     }).catch(function(error) {
         console.log(error);
     });
