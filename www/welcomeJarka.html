@@ -111,6 +111,14 @@
         console.log(uid);
         console.log(name);
         console.log(clubs);
+
+        //odczyt klubow
+        var clubArr = clubs.split(",");
+
+        for (i in clubArr) {
+            console.log(clubArr[i]);
+            console.log(localStorage.getItem(clubArr[i]))
+        }
     </script>
   </body>
 

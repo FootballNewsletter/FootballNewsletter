@@ -190,7 +190,7 @@ function setClubsToStorage() {
                 name: info[clubs[i]].name,
                 calendar: info[clubs[i]].calendar,
                 table: info[clubs[i]].table,
-                team: info[clubs[i]].team,
+                team: info[clubs[i]].team
             };
             //console.log(clubs[i]);
             //console.log(clubInfo);
