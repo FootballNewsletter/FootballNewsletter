@@ -33,8 +33,8 @@ function loginEmail() {
 
 //rejesrtacja email/passwd
 function registerEmail() {
-    var email = document.getElementById("email").value;
-    var passwd = document.getElementById("passwd").value;
+    var email = document.getElementById("emailRegister").value;
+    var passwd = document.getElementById("passwdRegister").value;
 
     user = firebase.auth().createUserWithEmailAndPassword(email, passwd).catch(function(error) {
         //wyswietlenie bledu nad formularzem logowania
@@ -87,11 +87,11 @@ function login(user) {
             console.log(user);
 
             if(username === -1) {
-                window.location.href = 'newuser.html';
+                window.location.href = 'preferences.html';
             } else {
                 localStorage.clubs = snapshot.val().clubs;
                 setClubsToStorage();
-                window.location.href = 'welcome.html';
+                window.location.href = 'welcomeJarka.html';
             }
 
         });
@@ -142,6 +142,8 @@ function getCurio() {
 }
 
 function setPref(arr) {
+    localStorage.clubs = arr;
+
     var updates = {};
     updates['/users/' + localStorage.getItem("UID") + '/clubs'] = arr;
 
