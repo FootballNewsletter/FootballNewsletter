@@ -19,6 +19,14 @@
 	<access origin="*" />
 	<allow-navigation href="*" />
 	<allow-intent href="*" />
+	    
+	<platform name="android">
+		<icon src="res/mdpi/ikona-mdpi.png" platform="android" width="48" height="48" density="mdpi" />
+		<icon src="res/hdpi/ikona-hdpi.png" platform="android" width="72" height="72" density="hdpi" />
+		<icon src="res/xhdpi/ikona-xhdpi.png" platform="android" width="96" height="96" density="xhdpi" />
+		<icon src="res/xxhdpi/ikona-xxhdpi.png" platform="android" width="144" height="144" density="xxhdpi" />
+		<icon src="res/xxxhdpi/ikona-xxxhdpi.png" platform="android" width="192" height="192" density="xxxhdpi" />
+    	</platform>
 
 	<universal-links>
 		<host name="https://qp54z.app.goo.gl" scheme="https" />
