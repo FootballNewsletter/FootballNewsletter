@@ -87,10 +87,17 @@ function login(user) {
             console.log(user);
 
             if(username === -1) {
+                //pierwsze logowanie i przejscie do wybory prefenrencji
                 window.location.href = 'preferences.html';
             } else {
+                //kolejne logowanie
+
+                //wypelnienie preferencji w localstorage
                 localStorage.clubs = snapshot.val().clubs;
+
+                //zrzut definicji klubow do localstorage
                 setClubsToStorage();
+
                 window.location.href = 'welcomeJarka.html';
             }
 
