@@ -3,12 +3,11 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
 		id          = "myfirstapp"
         version     = "1.0.0" >
-    <name>FootballNewsletter</name>
-    <description>FootballNewsletter</description>
+    <name>Football Newsletter</name>
+    <description>Football Newsletter</description>
     <author href="https://github.com/FootballNewsletter/FootballNewsletter">
 		Jarosław Stropa, Szymon Serwin, Łukasz Papierz, Damian Zając
 	</author>
-	<platform name="android" />
 
 	<plugin name="cordova-plugin-firebase" spec="1.0.0" />
 	<plugin name="cordova-plugin-device" spec="^1.1.4" />
