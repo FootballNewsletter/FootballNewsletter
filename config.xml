@@ -33,12 +33,12 @@
 		<icon src="res/xxxhdpi/ikona-xxxhdpi.png" platform="android" width="192" height="192" density="xxxhdpi" />
     	</platform>
 
-	    <universal-links>
+	    <!--<universal-links>
             <host name="https://qp54z.app.goo.gl" scheme="https" />
             <host name="footballnewsletter-c366f.firebaseapp.com" scheme="https">
                 <path url="/__/auth/callback"/>
             </host>
-	    </universal-links>
+	    </universal-links>-->
 
 
 

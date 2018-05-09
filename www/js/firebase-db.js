@@ -73,8 +73,10 @@ function loginGoogle() {
 
 function loginFb() {
     console.log('fb');
+
     firebase.auth().onAuthStateChanged( function(user){
         if(user) {
+            //poprawne logowanie
             login(user);
         } else {
             var provider = new  firebase.auth.FacebookAuthProvider();
