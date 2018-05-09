@@ -16,9 +16,14 @@
 	<plugin name="cordova-plugin-browsertab" spec="0.2.0" />
 	<plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
 	<plugin name="cordova-plugin-whitelist" source="npm" />
-	<access origin="*" />
-	<allow-navigation href="*" />
-	<allow-intent href="*" />
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="*" />
+
+    <plugin name="cordova-plugin-googleplus" source="npm" spec="5.2.1">
+	    <variable name="WEB_APPLICATION_CLIENT_ID" value="1064101044778-antang1guujbeobg08ocrk7cqq01rb1s.apps.googleusercontent.com" />
+    </plugin>
+
 	    
 	<platform name="android">
 		<icon src="res/mdpi/ikona-mdpi.png" platform="android" width="48" height="48" density="mdpi" />
@@ -28,12 +33,12 @@
 		<icon src="res/xxxhdpi/ikona-xxxhdpi.png" platform="android" width="192" height="192" density="xxxhdpi" />
     	</platform>
 
-	<universal-links>
-		<host name="https://qp54z.app.goo.gl" scheme="https" />
-		<host name="footballnewsletter-c366f.firebaseapp.com" scheme="https">
-			<path url="/__/auth/callback"/>
-		</host>
-	</universal-links>
+	    <universal-links>
+            <host name="https://qp54z.app.goo.gl" scheme="https" />
+            <host name="footballnewsletter-c366f.firebaseapp.com" scheme="https">
+                <path url="/__/auth/callback"/>
+            </host>
+	    </universal-links>
 
 
 
