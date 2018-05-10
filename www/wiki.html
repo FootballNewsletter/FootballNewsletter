@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+    <link href="css/pref.css" rel="stylesheet" id="pref-css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/preferences.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/firebase-db.js"></script>
+    <script src="js/chooseTeam.js"></script>
+    <script src="cordova.js"></script>
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+          integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <script type="text/javascript">
+        function WikipediaAPISearch() {
+
+            $.ajax({
+                type: "GET",
+                url: "http://pl.wikipedia.org/w/api.php?action=opensearch&search=Real_Madryt&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
+                    $.each(data, function (i, item) {
+                        if (i == 1) {
+                            var searchData = item[0];
+                            WikipediaAPIGetContent(searchData);
+                        }
+                    });
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage);
+                }
+            });
+        }
+
+        function WikipediaAPIGetContent(search) {
+            $.ajax({
+                type: "GET",
+                url: "http://pl.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Real_Madryt&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
+
+                    var markup = data.parse.text["*"];
+                    var blurb = $('<div></div>').html(markup);
+                    
+
+                    // remove cite error
+                    blurb.find('.mw-ext-cite-error').remove();
+                    $('#real_madryt').html($(blurb).find('p'));
+                    $('#real_madryt').html(blurb);
+
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage);
+                }
+            });
+        }
+		
+		
+		function WikipediaAPISearch2() {
+
+            $.ajax({
+                type: "GET",
+                url: "http://pl.wikipedia.org/w/api.php?action=opensearch&search=AS_Roma&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
+                    $.each(data, function (i, item) {
+                        if (i == 1) {
+                            var searchData = item[0];
+                            WikipediaAPIGetContent2(searchData);
+                        }
+                    });
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage);
+                }
+            });
+        }
+
+        function WikipediaAPIGetContent2(search) {
+            $.ajax({
+                type: "GET",
+                url: "http://pl.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=AS_Roma&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
+
+                    var markup = data.parse.text["*"];
+                    var blurb = $('<div></div>').html(markup);
+                    
+
+                    // remove cite error
+                    blurb.find('.mw-ext-cite-error').remove();
+                    $('#as_roma').html($(blurb).find('p'));
+                    $('#as_roma').html(blurb);
+
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage);
+                }
+            });
+        }
+		
+		
+		
+		function WikipediaAPISearch3() {
+
+            $.ajax({
+                type: "GET",
+                url: "http://pl.wikipedia.org/w/api.php?action=opensearch&search=Arsenal_F.C.&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
+                    $.each(data, function (i, item) {
+                        if (i == 1) {
+                            var searchData = item[0];
+                            WikipediaAPIGetContent3(searchData);
+                        }
+                    });
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage);
+                }
+            });
+        }
+
+        function WikipediaAPIGetContent3(search) {
+            $.ajax({
+                type: "GET",
+                url: "http://pl.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Arsenal_F.C.&callback=?",
+                contentType: "application/json; charset=utf-8",
+                async: false,
+                dataType: "json",
+                success: function (data, textStatus, jqXHR) {
+
+                    var markup = data.parse.text["*"];
+                    var blurb = $('<div></div>').html(markup);
+                    
+
+                    // remove cite error
+                    blurb.find('.mw-ext-cite-error').remove();
+                    $('#arsenal').html($(blurb).find('p'));
+                    $('#arsenal').html(blurb);
+
+                },
+                error: function (errorMessage) {
+                    alert(errorMessage);
+                }
+            });
+        }
+    </script>
+   <style type="text/css">
+   .references{
+display:none;
+}
+.tright{
+display:none;
+}
+   </style> 
+</head>
+<body>
+<div id="real_madryt" class="col-md-4 text-center" style="visibility: hidden">
+  
+</div>
+<div id="as_roma" class="col-md-4 text-center" style="visibility: hidden">
+
+</div>
+<div id="arsenal" class="col-md-4 text-center" style="visibility: hidden">
+
+</div>
+
+<div id="test">
+
+</div>
+
+<script>
+    loadClubs();
+    document.getElementById('test').innerHTML = localStorage.getItem('real_madryt');
+	
+	document.getElementById("arsenal").innerHTML = WikipediaAPISearch3(); 
+document.getElementById("as_roma").innerHTML = WikipediaAPISearch2();
+document.getElementById("real_madryt").innerHTML = WikipediaAPISearch();
+</script>
+</body>
+</html>
