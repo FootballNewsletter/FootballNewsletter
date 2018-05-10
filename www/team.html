@@ -31,6 +31,7 @@
 <script src="js/bootstrap.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/team.js"></script>
+<script src="js/redirections.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container">
@@ -47,16 +48,16 @@
                 <a class="js-scroll-trigger" href="welcomeJarka.html">News</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="results.html">Tabele</a>
+                <a class="js-scroll-trigger" onclick="redirectResults()">Tabele</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="schedule.html">Terminarze</a>
+                <a class="js-scroll-trigger" onclick="redirectSchedule()">Terminarze</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="team.html">Składy</a>
+                <a class="js-scroll-trigger" onclick="redirectTeam()">Składy</a>
             </li>
             <li class="sidebar-nav-item">
-                <a class="js-scroll-trigger" href="#contact">Ciekawostki</a>
+                <a class="js-scroll-trigger" href="curiosity.html">Ciekawostki</a>
             </li>
         </ul>
     </nav>
@@ -74,7 +75,7 @@
         </tr>
         </thead>
         <tbody id="results">
-        <script>loadTeamRealMadryt()</script>
+        <script>load()</script>
         </tbody>
     </table>
 </div>

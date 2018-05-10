@@ -16,3 +16,13 @@ function savePreferences() {
     setPref(arr);
     window.location.href = 'welcomeJarka.html';
 }
+
+function loadPreferences() {
+
+    var clubs = localStorage.clubs.split(',');
+
+    for(var i in clubs){
+        console.log(clubs[i]);
+        document.getElementById(clubs[i]).checked = true;
+    }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
+    <link href="css/pref.css" rel="stylesheet" id="pref-css">
+    <script src="js/bootstrap.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/preferences.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="js/firebase-init.js"></script>
+    <script src="js/firebase-db.js"></script>
+    <script src="js/chooseTeam.js"></script>
+    <script src="cordova.js"></script>
+</head>
+<body>
+<div id="real_madryt" class="col-md-4 text-center" style="visibility: hidden">
+    <a class="btn btn-primary btn-xl js-scroll-trigger" onclick="redirectChooseTeam('real_madryt')">Real Madryt</a>
+</div>
+<div id="as_roma" class="col-md-4 text-center" style="visibility: hidden">
+    <a class="btn btn-warning btn-xl js-scroll-trigger" onclick="redirectChooseTeam('as_roma')">AS Roma</a>
+</div>
+<div id="arsenal" class="col-md-4 text-center" style="visibility: hidden">
+    <a class="btn btn-danger btn-xl js-scroll-trigger" onclick="redirectChooseTeam('arsenal')">Arsenal</a>
+</div>
+<script>loadClubs()</script>
+</body>
+</html>

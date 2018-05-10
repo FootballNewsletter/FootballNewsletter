@@ -30,6 +30,7 @@
       <script src="js/firebase-db.js"></script>
       <script src="cordova.js"></script>
       <script src="js/init.js"></script>
+      <script src="js/redirections.js"></script>
 
   </head>
   <audio autoplay="autoplay">
@@ -49,16 +50,16 @@
           <a class="js-scroll-trigger" href="#posts">News</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="results.html">Tabele</a>
+          <a class="js-scroll-trigger" onclick="redirectResults()">Tabele</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="schedule.html">Terminarze</a>
+          <a class="js-scroll-trigger" onclick="redirectSchedule()">Terminarze</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="team.html">Składy</a>
+          <a class="js-scroll-trigger" onclick="redirectTeam()">Składy</a>
         </li>
         <li class="sidebar-nav-item">
-          <a class="js-scroll-trigger" href="#contact">Ciekawostki</a>
+          <a class="js-scroll-trigger" href="curiosity.html">Ciekawostki</a>
         </li>
           <li class="sidebar-nav-item">
               <a class="js-scroll-trigger" href="#contact" onclick="logout()">Wyloguj</a>
@@ -102,6 +103,7 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
+
   </body>
 
 </html>

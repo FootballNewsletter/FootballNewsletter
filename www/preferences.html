@@ -24,32 +24,9 @@
     <script src="cordova.js"></script>
 </head>
 <body>
-<!-- Navigation -->
-<a class="menu-toggle rounded" href="#">
-    <i class="fa fa-bars"></i>
-</a>
-<nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        <li class="sidebar-brand">
-            <a class="js-scroll-trigger" href="#page-top">Preferencje</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#posts">News</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="results.html">Tabele</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="schedule.html">Terminarze</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="team.html">Składy</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a class="js-scroll-trigger" href="#contact">Ciekawostki</a>
-        </li>
-    </ul>
-</nav>
+
+
+<div id="fullscreen_bg" class="fullscreen_bg"/>
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 col-sm-offset-3 col-md-offset-4">
@@ -88,7 +65,7 @@
         </div>
     </div>
 </div>
-
+<script>loadPreferences()</script>
 <!-- Bootstrap core JavaScript -->
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
