@@ -224,32 +224,3 @@ function setClubsToStorage() {
     });
 
 }
-
-function loginGoogle2() {
-    window.plugins.googleplus.login(
-        {
-            'webClientId': '1064101044778-antang1guujbeobg08ocrk7cqq01rb1s.apps.googleusercontent.com',
-            'offline': true
-        },
-        function (obj) {
-
-            console.log(obj);
-            if (!firebase.auth().currentUser) {
-                console.log(obj.idToken);
-                firebase.auth().signInWithCredential(firebase.auth.GoogleAuthProvider.credential(obj.idToken))
-                    .then((success) => {
-                    console.log("success: " + JSON.stringify(success));
-                login(obj)
-            })
-            .catch((error) => {
-                    console.log("error0: " + JSON.stringify(error));
-            });
-            } else {
-                console.log('error1: already sigend in firebase');
-            }
-        },
-        function (msg) {
-            console.log("error2: " + msg);
-        }
-    );
-}
