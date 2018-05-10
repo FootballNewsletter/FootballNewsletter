@@ -6,10 +6,11 @@ function urlify(text) {
 }
 
 
-function loadNews() {
-    $.getJSON('https://raw.githubusercontent.com/FootballNewsletter/JSONData/master/socialmedianews.json', function(json) {
+function loadNews(clubArr) {
+        $.getJSON('https://raw.githubusercontent.com/FootballNewsletter/JSONData/master/socialmedianews.json', function(json) {
         for (var i in json)
         {
+
             $("#posts").append("<div class=\"thumbnail principal-post\">\n" +
                 "                        <img src=\"" + json[i].pictureURL  + "\">\n" +
                 "                        <div class=\"caption\">\n" +
@@ -22,4 +23,12 @@ function loadNews() {
         }
     });
 
+}
+
+function getMappedClubs(clubArr) {
+    for (i in clubArr) {
+        if(clubArr[i] == 'real_madryt')
+        console.log(clubArr[i]);
+        console.log(localStorage.getItem(clubArr[i]))
+    }
 }

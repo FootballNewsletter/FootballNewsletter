@@ -29,6 +29,7 @@
       <script src="js/firebase-init.js"></script>
       <script src="js/firebase-db.js"></script>
       <script src="cordova.js"></script>
+      <script src="js/init.js"></script>
 
   </head>
   <audio autoplay="autoplay">
@@ -81,7 +82,7 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="col-sm-6 col-md-6" id="posts">
-            <script>loadNews()</script>
+            <script>init()</script>
           </div>
         </div>
       </div>
@@ -101,25 +102,6 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/stylish-portfolio.min.js"></script>
-    <script>
-        //TODO
-        //przyklad odczytu localstorage
-        var uid = localStorage.getItem("UID");
-        var name = localStorage.getItem("name");
-        var clubs = localStorage.getItem("clubs");
-
-        console.log(uid);
-        console.log(name);
-        console.log(clubs);
-
-        //odczyt klubow
-        var clubArr = clubs.split(",");
-
-        for (i in clubArr) {
-            console.log(clubArr[i]);
-            console.log(localStorage.getItem(clubArr[i]))
-        }
-    </script>
   </body>
 
 </html>
