@@ -13,8 +13,9 @@
 <script src="bootstrap4/js/bootstrap.bundle.js"></script>
 <script src="js/jquery.js"></script>
 <script src="js/results.js"></script>
-
-
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/firebase-db.js"></script>
 
 <!-- Bootstrap Core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -59,6 +60,9 @@
             <li class="sidebar-nav-item">
                 <a class="js-scroll-trigger" href="curiosity.html">Ciekawostki</a>
             </li>
+            <li class="sidebar-nav-item">
+                <a id="logout" class="js-scroll-trigger" href="#contact" onclick="logout()">Wyloguj</a>
+            </li>
         </ul>
     </nav>
 
@@ -92,5 +96,10 @@
 
 <!-- Custom scripts for this template -->
 <script src="js/stylish-portfolio.min.js"></script>
+
+<script>
+    document.getElementById('logout').innerHTML = 'Wyloguj ('+  localStorage.name +')';
+</script>
+
 </body>
 </html>
