@@ -1,3 +1,15 @@
+.fullscreen_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-image: url('https://i.pinimg.com/736x/6b/38/47/6b3847da0b0bac151de2fc53accd773d--nhl-logos-sports-logos.jpg');
+    background-repeat:repeat;
+}
+
 .material-switch > input[type="checkbox"] {
     display: none;
 }

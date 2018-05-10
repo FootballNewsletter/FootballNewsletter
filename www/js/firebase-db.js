@@ -176,11 +176,12 @@ function setPref(arr) {
     updates['/users/' + localStorage.getItem("UID") + '/clubs'] = arr;
 
     firebase.database().ref().update(updates);
+    setClubsToStorage();
 }
 
 function getClubs() {
     console.log("clubs");
-
+    var arr = [];
     firebase.database().ref('/clubs').once('value').then(function(snapshot) {
         var clubs = snapshot.val();
 
@@ -193,9 +194,11 @@ function getClubs() {
             // name - nazwa klubu tylko do wyswietlenia na froncie
             console.log(key);
             console.log(name);
+            arr.push(key);
         }
 
     });
+    return arr;
 }
 
 function setClubsToStorage() {
@@ -211,9 +214,9 @@ function setClubsToStorage() {
                 table: info[clubs[i]].table,
                 team: info[clubs[i]].team
             };
-            //console.log(clubs[i]);
-            //console.log(clubInfo);
-            //console.log(JSON.stringify(clubInfo));
+            console.log(clubs[i]);
+            console.log(clubInfo);
+            console.log(JSON.stringify(clubInfo));
 
             localStorage.setItem(clubs[i], JSON.stringify(clubInfo));
         }
