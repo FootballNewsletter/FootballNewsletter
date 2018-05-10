@@ -34,6 +34,14 @@
 <div id="arsenal" class="col-md-4 text-center" style="visibility: hidden">
     <a class="btn btn-danger btn-xl js-scroll-trigger" onclick="redirectChooseTeam('arsenal')">Arsenal</a>
 </div>
-<script>loadClubs()</script>
+
+<div id="test">
+
+</div>
+
+<script>
+    loadClubs();
+    document.getElementById('test').innerHTML = localStorage.getItem('real_madryt');
+</script>
 </body>
 </html>

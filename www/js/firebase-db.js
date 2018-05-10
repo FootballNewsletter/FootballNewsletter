@@ -202,25 +202,22 @@ function getClubs() {
 }
 
 function setClubsToStorage() {
-    var clubs = localStorage.clubs.split(',');
 
-    firebase.database().ref('/clubs').once('value').then(function(snapshot) {
+    localStorage.setItem('real_madryt', 'dupa');
+
+    firebase.database().ref('/clubs/real_madryt').once('value').then(function(snapshot) {
         var info = snapshot.val();
+        localStorage.setItem('real_madryt', JSON.stringify(info));
+    });
 
-        for(var i in clubs) {
-            var clubInfo = {
-                name: info[clubs[i]].name,
-                calendar: info[clubs[i]].calendar,
-                table: info[clubs[i]].table,
-                team: info[clubs[i]].team
-            };
-            console.log(clubs[i]);
-            console.log(clubInfo);
-            console.log(JSON.stringify(clubInfo));
+    firebase.database().ref('/clubs/as_roma').once('value').then(function(snapshot) {
+        var info = snapshot.val();
+        localStorage.setItem('as_roma', JSON.stringify(info));
+    });
 
-            localStorage.setItem(clubs[i], JSON.stringify(clubInfo));
-        }
-
+    firebase.database().ref('/clubs/arsenal').once('value').then(function(snapshot) {
+        var info = snapshot.val();
+        localStorage.setItem('arsenal', JSON.stringify(info));
     });
 
 }
