@@ -133,7 +133,7 @@ function logout() {
         }
         localStorage.setItem("clubs",null);
 
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     }).catch(function(error) {
         console.log(error);
     });
