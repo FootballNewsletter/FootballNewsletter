@@ -1,3 +1,8 @@
+
+.fullscreen_bg {
+    background: url('https://png.pngtree.com/thumb_back/fh260/back_pic/03/91/46/4657dfd12f06c41.jpg') repeat 0 100%;
+}
+
 .thumbnail:hover {
     background-color: #f1eded  ;
 }
@@ -33,14 +38,3 @@
     text-align: justify;
 }
 
-.fullscreen_bg {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-image: url('http://wallpapervip.com/download/football_13-wallpaper.jpg');
-    background-repeat:repeat;
-}
