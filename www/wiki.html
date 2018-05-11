@@ -22,6 +22,7 @@
     <script src="js/firebase-init.js"></script>
     <script src="js/firebase-db.js"></script>
     <script src="js/chooseTeam.js"></script>
+    <script src="js/redirections.js"></script>
     <script src="cordova.js"></script>
 	
 	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -182,6 +183,40 @@ display:none;
    </style> 
 </head>
 <body>
+<div class="container">
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+        <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li class="sidebar-brand">
+                <a class="js-scroll-trigger" href="preferences.html">Preferencje</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="welcomeJarka.html">News</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" onclick="redirectResults()">Tabele</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" onclick="redirectSchedule()">Terminarze</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" onclick="redirectTeam()">Składy</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="curiosity.html">Ciekawostki</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a class="js-scroll-trigger" href="wiki.html">Wikipedia</a>
+            </li>
+            <li class="sidebar-nav-item">
+                <a id="logout" class="js-scroll-trigger" href="#contact" onclick="logout()">Wyloguj</a>
+            </li>
+        </ul>
+    </nav>
+
 <div id="real_madryt" class="col-md-4 text-center" style="visibility: hidden">
   
 </div>
@@ -195,6 +230,7 @@ display:none;
 <div id="test">
 
 </div>
+</div>
 
 <script>
     loadClubs();
@@ -204,5 +240,19 @@ display:none;
 document.getElementById("as_roma").innerHTML = WikipediaAPISearch2();
 document.getElementById("real_madryt").innerHTML = WikipediaAPISearch();
 </script>
+
+<script>
+    document.getElementById('logout').innerHTML = 'Wyloguj ('+  localStorage.name +')';
+</script>
+
+<!-- Bootstrap core JavaScript -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="js/jquery.easing.min.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="js/stylish-portfolio.min.js"></script>
 </body>
 </html>
