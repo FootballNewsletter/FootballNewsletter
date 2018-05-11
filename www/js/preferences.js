@@ -13,6 +13,11 @@ function savePreferences() {
         arr.push('arsenal');
         console.log("arsenal");
     }
+    var uid = localStorage.getItem("UID");
+    var name = localStorage.getItem("name");
+
+    createUser(uid, name);
+
     setPref(arr);
     document.getElementById('redirect').style.visibility='visible';
 }
