@@ -14,7 +14,7 @@ function savePreferences() {
         console.log("arsenal");
     }
     setPref(arr);
-    window.location.href = 'welcomeJarka.html';
+    document.getElementById('redirect').style.visibility='visible';
 }
 
 function loadPreferences() {
@@ -25,4 +25,8 @@ function loadPreferences() {
         console.log(clubs[i]);
         document.getElementById(clubs[i]).checked = true;
     }
+}
+
+function redirectToNews() {
+    window.location.href = 'welcomeJarka.html';
 }
